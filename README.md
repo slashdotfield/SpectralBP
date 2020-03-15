@@ -20,6 +20,16 @@ where dir is the corresponding directory of the downloaded paclet. For example, 
 
 Alternatively, one may save the paclet to Mathematica's default notebook directory, which may be found out by running the command \$UserDocumentsDirectory
 
+One may then evaluate
+
+			PacletInstall["SpectralBP-1.0.0.paclet"]
+
+If installation is successful, one would be prompted by an output such as Paclet\[SpectralBP-,1.0.0,<>\].
+
+## Use
+
+
+
 ## License
 
 Sean Julian Fortuna
