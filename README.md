@@ -1,6 +1,6 @@
 # SpectralBP
 
-[![license: MIT](https://img.shields.io/github/license/slashdotfield/SpectralBP)](LICENSE.md)
+[![license: MIT](https://img.shields.io/github/license/slashdotfield/SpectralBP)](LICENSE)
 
 A Mathematica package for the numerical solution of ODE eigenvalue problems via a pseudospectral method using the Bernstein basis
 
@@ -9,4 +9,4 @@ A Mathematica package for the numerical solution of ODE eigenvalue problems via 
 ## License
 
 Sean Julian Fortuna
-SpectralBP is covered by the MIT License. For details, see [LICENSE.md](LINCENSE.md).
+SpectralBP is covered by the MIT License. For details, see [LICENSE.md](LINCENSE).
