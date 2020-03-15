@@ -1,0 +1,727 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     30010,        717]
+NotebookOptionsPosition[     18839,        470]
+NotebookOutlinePosition[     27439,        664]
+CellTagsIndexPosition[     27396,        661]
+WindowTitle->GetEigenfunctions
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       DynamicBox[If[$VersionNumber < 11.1, 
+         Cell[
+         "SPECTRALBP SYMBOL", "PacletNameCell", TextAlignment -> Center, 
+          CellID -> 19], 
+         ItemBox[
+          Cell[
+           BoxData[
+            RowBox[{
+              TemplateBox[{8}, "Spacer1"], 
+              Cell[
+              "SPECTRALBP SYMBOL", "PacletNameCell", TextAlignment -> Center, 
+               CellID -> 20], 
+              TemplateBox[{8}, "Spacer1"]}]]], Background -> GrayLevel[0.5], 
+          ItemSize -> Full]],
+        ImageSizeCache->{133., {3., 13.}},
+        UpdateInterval->Infinity], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[{
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "See Also",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "b7fdd911-aeda-4050-95c3-fffbf79125fa"]
+         }],ExpressionUUID->"6ba55642-e2c6-4350-96a5-d901f4cd5a49"],
+         StripOnInput->False], {"\<\"GetModes\"\>":>Documentation`HelpLookup[
+        "paclet:SpectralBP/ref/GetModes"], "\<\"GetAccurateModes\"\>":>
+        Documentation`HelpLookup[
+        "paclet:SpectralBP/ref/GetAccurateModes"], "\<\"CompareModes\"\>":>
+        Documentation`HelpLookup[
+        "paclet:SpectralBP/ref/CompareModes"], "\<\"GetEigenvectors\"\>":>
+        Documentation`HelpLookup["paclet:SpectralBP/ref/GetEigenvectors"]},
+        Appearance->None,
+        BaseStyle->"AnchorBarActionMenu",
+        MenuAppearance->Automatic,
+        MenuStyle->"SeeAlso"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "a48ef968-5af1-411b-9273-9f5957987867"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "URL",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "0c7b3ff7-0959-40f2-b162-56fc3e8356e4"]
+         }],ExpressionUUID->"8e5c6c91-cdfd-4fe9-856e-c99f67560288"],
+         StripOnInput->False], {
+        RowBox[{
+         RowBox[{"SpectralBP", "/", "ref"}], "/", "GetEigenfunctions"}]:>None, 
+        RowBox[{"Copy", " ", "Documentation", " ", "Center", " ", "URI"}]:>
+        CopyToClipboard["SpectralBP/ref/GetEigenfunctions"], Delimiter, 
+        RowBox[{"Copy", " ", "web", " ", "URL"}]:>CopyToClipboard[
+         Hyperlink[
+          
+          URLBuild[{
+           BTools`Paclets`DocGen`$DocGenURLBase, 
+            "SpectralBP/ref/GetEigenfunctions"}]]], 
+        RowBox[{"Go", " ", "to", " ", "URL"}]:>SystemOpen[
+         URLBuild[{
+          BTools`Paclets`DocGen`$DocGenURLBase, 
+           "SpectralBP/ref/GetEigenfunctions"}]]},
+        Appearance->None,
+        BaseStyle->"AnchorBarActionMenu",
+        MenuAppearance->Automatic,
+        MenuStyle->"URLMenu"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "b5e2d9e4-2c2e-4642-bd96-58ba1fffc531"]
+    }], "AnchorBar",ExpressionUUID->"6ca707d1-1b81-47fc-8357-8a684949139d"]}
+  }]], "AnchorBarGrid",
+ CellID->1,ExpressionUUID->"52a136ce-d76b-45ed-a076-294fdc3d6a47"],
+
+Cell[CellGroupData[{
+
+Cell["GetEigenfunctions", "ObjectName",
+ CellID->2,ExpressionUUID->"b05d4d6b-b237-405b-9f21-6081e2bf1d86"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{Cell[BoxData[
+        TemplateBox[{Cell[
+           TextData["GetEigenfunctions"]],
+          "paclet:SpectralBP/ref/GetEigenfunctions"},
+         "RefLink",
+         BaseStyle->{"InlineFormula"}]],ExpressionUUID->
+        "6a21ed01-5bbf-40fd-91dc-a9cb4fd28664"], "[", 
+       RowBox[{
+        StyleBox["eqn", "TI"], ",", 
+        StyleBox["spectrum", "TI"], ",", 
+        StyleBox["Nmax", "TI"], ",", 
+        StyleBox["var", "TI"]}], "]"}]], "InlineFormula",ExpressionUUID->
+      "a87adcd9-e436-4241-976b-0a7ccc6197a4"],
+     "\[LineSeparator]",
+     Cell[TextData[{
+      "Calculates the eigenfunctions as a sum of Bernstein polynomials using \
+variable ",
+      StyleBox["var", "TI", "TI"]
+     }], "InlineFormula",ExpressionUUID->
+      "de4e2ea0-20a8-48ff-a671-81139a5b5d3a"]
+    }],ExpressionUUID->"f0635f26-353b-4b1f-bdd9-d4d9a6df9a29"]}
+  }]], "Usage",
+ CellID->3,ExpressionUUID->"53dc22ca-6bf4-4e77-94ab-f28c1c0172ba"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[If[$VersionNumber < 11.1, "", 
+    Cell[
+     BoxData[
+      ToBoxes[
+       Toggler[
+        Dynamic[
+         MatchQ[
+          CurrentValue[
+           EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}, 
+           Closed], 
+          Alternatives[Open, True]], (CurrentValue[
+            EvaluationNotebook[], {
+            TaggingRules, "Openers", "NotesSection"}] = #; Null)& , 
+         ImageSizeCache -> {14., {5., 9.}}], {True -> Style[
+           Graphics[{
+             Thickness[0.18], 
+             RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+             Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+            PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+           0.68 Inherited], False -> Rotate[
+           Style[
+            Graphics[{
+              Thickness[0.18], 
+              RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+              Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+             PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+            0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]}]]]]],
+   ImageSizeCache->{14., {6., 15.}},
+   UpdateInterval->Infinity]],ExpressionUUID->
+  "2c966b0e-12c9-44cb-83d6-0c13c31f1be3"],
+ Cell["Details", "NotesFrameText",ExpressionUUID->
+  "3899cd4e-08e7-48ac-8747-b82a3a154adf"]
+}], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellID->4,ExpressionUUID->"a4ac693a-bc9a-4770-9104-47ba86ffbce3"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["GetEigenfunctions"]],"paclet:SpectralBP/ref/GetEigenfunctions"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]],ExpressionUUID->
+  "2f5ab0d0-3e30-4952-bf60-ceb3849d9b76"],
+ " has the same options as ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["GetModes"]],"paclet:SpectralBP/ref/GetModes"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]],ExpressionUUID->
+  "19e3589f-75fc-4589-8a42-52d9ab863ce9"],
+ " and ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["GetEigenvectors"]],"paclet:SpectralBP/ref/GetEigenvectors"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]],ExpressionUUID->
+  "a87de84a-9886-4b90-8b64-6de3e4ca2ce5"]
+}], "Notes",
+ CellID->5,ExpressionUUID->"846118dc-4369-4d22-be92-2d799ded5d56"],
+
+Cell["\<\
+Note that one must specify the same boundary conditions from which the \
+spectrum was generated. One must specify the correct LowerBound, UpperBound, \
+LBPower and UBPower\
+\>", "Notes",
+ CellID->6,ExpressionUUID->"7633b446-6f62-4453-aa1d-1269fc303074"]
+}, Dynamic[CurrentValue[
+ EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}, Closed]]]],
+
+Cell[BoxData[
+ ButtonBox[
+  DynamicBox[ToBoxes[
+    Overlay[{
+      Graphics[{}, Background -> If[
+         CurrentValue["MouseOver"], 
+         RGBColor[0.942, 0.978, 0.992], None], ImageSize -> {720, 70}, 
+       AspectRatio -> Full], 
+      Pane[
+       Grid[{{"", 
+          Spacer[10], 
+          Image[CompressedData["
+1:eJztyDEKwkAQhtElpkjpFbxF2jSCbcQDJLgJNitsBPFKXlLnBlZ278E38M9h
+vo9Lk1Laujjj9BxqnV7nfYxL2W5ryddTeeQ1137exbONjtE7+gAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAnyUAAAAAAAAAAAAAAPjhC5+F
+/fI=
+           "], "Byte", ColorSpace -> "RGB", ImageSize -> All, Interleaving -> 
+           False, Magnification -> Automatic], 
+          Spacer[10], 
+          Image[CompressedData["
+1:eJztyDEKwkAQhtElpkjpFbxF2jSCbcQDJLgJNitsBPFKXlLnBlZ278E38M9h
+vo9Lk1Laujjj9BxqnV7nfYxL2W5ryddTeeQ1137exbONjtE7+gAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAnyUAAAAAAAAAAAAAAPjhC5+F
+/fI=
+           "], "Byte", ColorSpace -> "RGB", ImageSize -> All, Interleaving -> 
+           False, Magnification -> Automatic]}}, Spacings -> {0, 0}, 
+        Alignment -> {Center, Center}], ImageSize -> {720, 70}, 
+       Alignment -> {Left, Center}], 
+      If[
+       CurrentValue["MouseOver"], 
+       Image[CompressedData["
+1:eJzdmc9vE0cUxyNAosfeckGIXnujJy6tVKk9VOLStFVz4AIlRD00VQMSouXQ
+/hEIIfXAta0qFTggkBqpCA40CSUJtKX8ik1i4ti7XjuJfyQkw/uud52345nx
+7I+A1cM3tuPdnfeZN+/HjN869vXQiV0DAwMn36A/Q0dPvz8+fvTMJ2/Sh8/G
+Tn45OjZy/KOxUyOjI+OHju2mf74TaA9JCPG/kdfaTKr9pCOkC6TbpBJJBNoi
+FUk3SedIw6TBFGMplZJjnPQ7szmOrpNGXzPHWdLdhPbLukUae8UcB1PMfy9d
+JR14BRznTXaU1tbFvLMq/lmqirsLrpjMlcWf8yVf0/R+ZtEV/xZrIl+pC6ex
+oXtOjfQp3TMQV5YcP+rsX/AaYrZQ6dhsoykSeIsrLR3P+R3gUDIsrbbE7GI8
++1X6u1gV5brSP7FYenAo19ITdy21/Vx38mWxWG2oWIYy4DioYniwXMuUgStH
+8yON55L2peToyks7yRAKeUAa90oKjrNJ1hLi9z7FL+a1QDFcWtsQy6vrtGaa
+4rFbt84HhVpTZjmekCNS4xDTvcZ+sLxC8fpCVFpbEXmBws9LxHXvuWd81vQz
+R7iNF5zjRgKOb2RfmPLSFMVoe/7IzuZmx94Zdg/e+98F3+Pap7R+TCz/lVZk
+nwzH5IjEBeqDiQHz68nzTvZ2cYScgXBt3sAymSvJ+fhyDI79Xb4wrOlCrRXM
+72Ysf4QceP/Y0cfdw/Kq7JO9lhxH+H3oNcx+34qul/VtFq0/ePz4n6O+47qT
+d2SODy05LvD70C/p8pIf02y9VyQmFUd43fZr+/oFyme6+ZJ6lx8sOW5zDvRA
+qmcjt8p283Wvio9O/ATXyPGEuVeNNe9E6sklSw6+j/P7VtWzc24jErN8vXuG
++JBjiAu9sGos1F5m0z1Ljsh65L13JL59X7dt1YnfO+n37fpr/Xh31bkLtYbZ
+VEjCoVuzqNMYW/d9XMFHuhyMfMlsqlpybNlwFNc2fH9kxmGoJXOFiD+eWXIU
+Oce0Zl2hXwpjOYt15RnqCHIKs+kvS46bnAN7UdWzsZbDnNlV23R5l8W3Jwnf
+3dfkRqk/+dWS4xzn0OWQuQKrB5J94asq77ZZN4UncZeb+pySr0T2JN9Zcgxz
+DlP/E/ZVPOdymfqrSB9AelrR93DoKZhN71lyDHIOnGtMaZ6PfMgZqlIdUXJI
+9Q+vTkNfA2eofkk5dI8lB3TNpqZDTyhOIvWczbOuT5TXFM4ZdM+XavnPOgYN
+xyjnQH+jG6e9frdZtmPX3LeH/nhYUvdvEPYEbjOylzockwO6xVlMc+bnL8qZ
+jrTvU3GEa8/1/WDe60u+mDAxGDi+4hzYz+BsxjQubM1jPyL1XTyvlf2Yrmvj
+gQt1nO1tq6S3E3BAVzkLzpd6jQ3BRuRr+AhrDj3lI9oPoT7ocmsWLAaOA8G9
+LA9ne/6WJUuP88QhuXc01ZTXyWJxvtt1Nvp8pemfzfQTi+V5excLnoneB+ca
+SW1D7kDc257PmVhi/P7xMcmReZDLcK4Rxz/oP2F/WB9gW1qWmL9H7SNdkVl4
+zUTex14UfQv6SewfkKvgO8TWcn1deW9aloS/D35B+kPHE1MTYV7MiiUGR6jP
+SZcT2v+TF/QasCFLlgQcofaSPiB9T/qNNEtaJHmkHGmK9AvpW9K7pN1y3syK
+JSWHsfexVVKWOXYW0Q8cSViQ9/lvcv3CEYdFZug3DhsWFUM/cphYdAz9yqFi
+QUzrGEgX03LssDosBl1MUQf7haXD8BJ6c/TW
+        "], "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+        0.5], 
+       Image[CompressedData["
+1:eJztmctL1FEUx4cUbNnOjYht29mqTUFQi6BNU5ELN5omLZpIg6hc1B8hIrRo
+WxGULqQgoZzxAer4yPcDZJzxnY6Kb+Z2vsPMdOd67/3d30NnFh34huXv3ns+
+93HOubeL1U/9j875fL6G8/SHv+rF9fr6qpd3L9Bf7gcaHtcFamtuBZ7X1tXW
+X6kuoH+8nFIhiTH2X4yVkipJLaRe0ir7ZwnSMilIaiJVkIrzwGde9aQfzJl9
+J9Xl2P9G0qBD/0ULkQJn7H85cz7/VtZOKjsDhmadE7u7u2xhYYGNjY2xvr4+
+FgqFWGdnZ1JdXV1sYGCATU5OsqWlJXZ4eKjqZot0j9r47MqQ4Z1q4NXVVTY4
+OJjx2UTBYDDJu7W1peq2+RQ4pAzb29ssHA7b8l+m8fFxdnBw4JrFgkG6lyKR
+SHJO3TKk1d3dzdbX12VD+T3gKBc7TSQSbGpqyjP/RS0uLopD/iGVuOQ4EZdO
+k0HD0uaCo1G2l6x8wF4bHR1N+hKPx9ne3l4yjm1sbCTbm8aDzc1NcfgahxxZ
+OQ5n2uo8TE9Pq84rE/saGRnR9tXb28uOjo74Zr8ccDwTx9bFJZxRzLdoyBfp
+b/CzaNFoVMsyMzMjNqmwyZF1LpAfdAw7OzvSebfigK2srGj36P7+Pv95qw2O
+UnEs3Z6WrYMdDtj8/Lyy/7m5OfHzIkOOSr4RzqjuPOjMlAOxnP9WPCeC3TTk
+aOEboV5SrbnVmTblgK2trSnnS6hd3hpyZE0AaiBZ34itVmaHA2vS09MjHQtz
+ydlXQw7+HpesW2V9S3KVKw7YxMSEdCzkXs5+G3JkGV9780KOS/uqEt8WP+u+
+hanyLHINZzEnHKo9izyt+71dwXAvkf0O8ZKzuCFHwoQDceysOIaHh3mXIoYc
+y3wj3ONkfafzhpf7SpVHhJgSNuQI8o1UcR172crsnnP4KxtLqE8+G3I08Y1w
+nzbYs645jo+PlTFFiI2vDTkq+EaqPQuhbvWKIxaLWcaUlF0z5CjmG+FdQ1Wv
+C/HQMQfqc1UO7O/vFz8vNOSAvvENVTkdEnKtIw68Mxj2/1HFoOCo4xujvlGN
+A6H2dsoxOzur7Bd3Apwbzm7b5IBCpnMGIWaiRjLlwF6y6lNYiw4dg4bjCd8J
+alvMj25c+Iq6VeThDfOLe6DqPPBCTOTutiiELjnggNp5H/C+ZDU2BB9R8yHH
+IN4hbmK9kB9UsdULFg1HWaptxuCTHT+8kCmLhgPyi3sDc+zlW6JXLBYc0Im3
+Ubwv4c6ZTywGHFIW9Inax83aIHbg3Ju+z+lYDDmgO6QTj8l4m8G7hp31QWyD
+/+n8AN/cstjggEpIbSJL2pAzEfdxF0XdMjQ0lLw/IFZh7XC2hHopa33dsNjk
+SOsh6aeKx6Z1pHzJFQv0gNTq0P8PLFVrpHzINQtURLpBekP6QsJlNErCw/k8
+qY/0ifSKdJVUIImbXrG44dDWPqZyyoJzyFnOOZywIO4L/yeXFxx2WCQMecVh
+wqJgyDsOHYuGIS85ZCw40xqG9245TlkZFo3lO4MJS4bhL7E9ExQ=
+        "], "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+        0.5]]}, Alignment -> {-0.85, Center}], StandardForm],
+   ImageSizeCache->{720., {32., 38.}}],
+  Appearance->None,
+  ButtonFunction:>(CurrentValue[
+     EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}] = Open),
+  Evaluator->Automatic,
+  Method->"Preemptive"]], "NotesThumbnails",
+ CellOpen->FEPrivate`If[
+   FEPrivate`Less[FEPrivate`$VersionNumber, 11.1], False, 
+   FEPrivate`Not[
+    FEPrivate`Or[
+     FEPrivate`SameQ[
+      FrontEnd`CurrentValue[
+       FrontEnd`EvaluationNotebook[], {
+       TaggingRules, "Openers", "NotesSection"}], Open], 
+     FEPrivate`SameQ[
+      FrontEnd`CurrentValue[
+       FrontEnd`EvaluationNotebook[], {
+       TaggingRules, "Openers", "NotesSection"}], True]]]],
+ CellID->7,ExpressionUUID->"fd9aaf82-77bb-41a4-b091-27eb43cdbdb8"],
+
+Cell["", "PageDelimiter",
+ CellID->8,ExpressionUUID->"8791cb53-1d88-43fc-8546-1ca1aa665758"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[If[$VersionNumber < 11.1, "", 
+    Cell[
+     BoxData[
+      ToBoxes[
+       Toggler[
+        Dynamic[
+         MatchQ[
+          CurrentValue[
+           EvaluationNotebook[], {
+           TaggingRules, "Openers", "PrimaryExamplesSection"}, Closed], 
+          Alternatives[Open, True]], (CurrentValue[
+            EvaluationNotebook[], {
+            TaggingRules, "Openers", "PrimaryExamplesSection"}] = #; Null)& , 
+         ImageSizeCache -> {14., {5., 9.}}], {True -> Style[
+           Graphics[{
+             Thickness[0.18], 
+             RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+             Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+            PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+           0.68 Inherited], False -> Rotate[
+           Style[
+            Graphics[{
+              Thickness[0.18], 
+              RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+              Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+             PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+            0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]}]]]]],
+   ImageSizeCache->{14., {10., 16.}},
+   UpdateInterval->Infinity]],ExpressionUUID->
+  "9ed0bfdb-8574-4341-a3e9-90efc69ffa6e"],
+ "Examples"
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellID->9,ExpressionUUID->"ed771fe4-8a8b-46ee-97dc-1a6ef253aa9d"],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->10,ExpressionUUID->"d1c9f25a-c368-4902-ba57-608f6db4b971"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["GetModes"]],"paclet:SpectralBP/ref/GetModes"},
+   "RefLink",
+   BaseStyle->Dynamic[
+     If[$VersionNumber < 11.1, {"InlineFormula", FontFamily -> "Verdana"}, {
+      "InlineFormula"}], UpdateInterval -> DirectedInfinity[1]]]], 
+  "InlineFormula",ExpressionUUID->"f7fee4cb-1a15-4f20-829b-275840003148"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["GetAccurateModes"]],"paclet:SpectralBP/ref/GetAccurateModes"},
+   "RefLink",
+   BaseStyle->Dynamic[
+     If[$VersionNumber < 11.1, {"InlineFormula", FontFamily -> "Verdana"}, {
+      "InlineFormula"}], UpdateInterval -> DirectedInfinity[1]]]], 
+  "InlineFormula",ExpressionUUID->"306df5f2-f2dc-4409-b5d1-e658cfce069d"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["CompareModes"]],"paclet:SpectralBP/ref/CompareModes"},
+   "RefLink",
+   BaseStyle->Dynamic[
+     If[$VersionNumber < 11.1, {"InlineFormula", FontFamily -> "Verdana"}, {
+      "InlineFormula"}], UpdateInterval -> DirectedInfinity[1]]]], 
+  "InlineFormula",ExpressionUUID->"53daf331-e03d-4556-b02c-970168ebba25"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["GetEigenvectors"]],"paclet:SpectralBP/ref/GetEigenvectors"},
+   "RefLink",
+   BaseStyle->Dynamic[
+     If[$VersionNumber < 11.1, {"InlineFormula", FontFamily -> "Verdana"}, {
+      "InlineFormula"}], UpdateInterval -> DirectedInfinity[1]]]], 
+  "InlineFormula",ExpressionUUID->"a6fae159-3516-4aae-8a38-4ae7ec29af1c"]
+}], "SeeAlso",
+ CellID->11,ExpressionUUID->"49502eaa-83d2-44ec-9743-1c91ed8379bc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Tutorials", "RelatedTutorialsSection",
+ CellID->12,ExpressionUUID->"1618f649-ef66-4749-9abf-357fb9563026"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["SpectralBP - Quantum Mechanics Tutorial"]],
+   "paclet:SpectralBP/tutorial/QuantumMechanicsTutorial"},
+  "RefLinkPlain",
+  BaseStyle->{"InlineFormula"}]], "RelatedTutorials",
+ CellID->13,ExpressionUUID->"b8d02862-a48f-4222-99d4-07a4c064a69b"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["SpectralBP - Quasinormal Modes Tutorial"]],
+   "paclet:SpectralBP/tutorial/QuasinormalModesTutorial"},
+  "RefLinkPlain",
+  BaseStyle->{"InlineFormula"}]], "RelatedTutorials",
+ CellID->14,ExpressionUUID->"c33c030e-e679-4be9-b89b-276d2019ca85"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Links", "RelatedLinksSection",
+ CellID->15,ExpressionUUID->"e50a825c-a671-49e0-9fff-d9730e1c03de"],
+
+Cell[TextData[Cell[BoxData[
+ TemplateBox[{"SpectralBP","https://github.com/slashdotfield/SpectralBP"},
+  "WebLink",
+  BaseStyle->{
+   "RelatedLinks"}]],ExpressionUUID->"7fac256b-8359-4940-a4b1-8e97f59711d8"]],\
+ "RelatedLinks",
+ CellID->16,ExpressionUUID->"a0aad25d-4f7f-4813-abd7-6fa4f11fcfc3"]
+}, Open  ]],
+
+Cell["Generated on  Sun 12 May 2019 19:32:58", "History",
+ CellID->17,ExpressionUUID->"96f94f17-eafc-4418-97f5-89e447cdf6d8"],
+
+Cell[" ", "FooterCell",
+ CellID->18,ExpressionUUID->"6942a4b3-4fa6-4442-a4cf-13a39bb63572"]
+},
+ClosingSaveDialog->False,
+Saveable->False,
+WindowSize->{775, 561},
+WindowMargins->{{287, Automatic}, {Automatic, 54}},
+WindowTitle->"GetEigenfunctions",
+TaggingRules->{
+ "ColorType" -> "SymbolColor", "ModificationHighlight" -> False, "LinkTrails" -> 
+  "", "HasOptions" -> False, "SearchTextTranslated" -> "", 
+  "Metadata" -> {
+   "built" -> "{2019, 5, 12, 19, 32, 59.9428415}", 
+    "history" -> {"11.3", "", ""}, "context" -> "Documents`", 
+    "keywords" -> {"geteigenfunctions", "get", "eigenfunctions"}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "SpectralBP", "language" -> "en", "paclet" -> "Mathematica", 
+    "status" -> "None", "summary" -> 
+    "GetEigenfunctions[eqn,spectrum,Nmax,var]. Calculates the eigenfunctions \
+as a sum of Bernstein polynomials, from solving the eigenvectors of a list of \
+eigenvalues.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "GetEigenfunctions", "titlemodifier" -> "", "windowtitle" -> 
+    "GetEigenfunctions", "type" -> "Symbol", "uri" -> 
+    "SpectralBP/ref/GetEigenfunctions"}, "NewStyles" -> True, 
+  "Openers" -> {"NotesSection" -> Closed, "PrimaryExamplesSection" -> Open}},
+CellContext->Notebook,
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> 
+     FrontEnd`FileName[{"Wolfram"}, "Reference.nb", CharacterEncoding -> 
+       "UTF-8"]]], 
+   Cell[
+    StyleData["Notebook"], DockedCells -> {
+      Cell[
+       BoxData[
+        PanelBox[
+         StyleBox[
+          TemplateBox[{
+            TemplateBox[{9}, "Spacer1"], 
+            TemplateBox[{
+              TooltipBox[
+               DynamicModuleBox[{$CellContext`destination$$ = 0}, 
+                DynamicBox[
+                 FEPrivate`If[FEPrivate`HistoryList["Back"] === {}, 
+                  ButtonBox[
+                   DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Toolbars", "DocCenter"}, 
+                    "DisabledBackIcon.png"]]], Enabled -> False, Appearance -> 
+                   None, FrameMargins -> 0], 
+                  ButtonBox[
+                   PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Toolbars", "DocCenter"}, 
+                    "BackIconHot.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Toolbars", "DocCenter"}, 
+                    "BackIcon.png"]]]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]]], ButtonFunction :> 
+                   FrontEndToken[
+                    FrontEnd`ButtonNotebook[], "HyperlinkGoBack"], Evaluator -> 
+                   None, Appearance -> None, FrameMargins -> 0]]], 
+                DynamicModuleValues :> {}], 
+               DynamicBox[
+                FEPrivate`FrontEndResource[
+                "HelpToolbarText", "TooltipBack"]]], 
+              TemplateBox[{2}, "Spacer1"], 
+              TooltipBox[
+               DynamicModuleBox[{$CellContext`destination$$ = 0}, 
+                DynamicBox[
+                 FEPrivate`If[FEPrivate`HistoryList["Forward"] === {}, 
+                  ButtonBox[
+                   DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Toolbars", "DocCenter"}, 
+                    "DisabledForwardIcon.png"]]], Enabled -> False, 
+                   Appearance -> None, FrameMargins -> 0], 
+                  ButtonBox[
+                   PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Toolbars", "DocCenter"}, 
+                    "ForwardIconHot.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Toolbars", "DocCenter"}, 
+                    "ForwardIcon.png"]]]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]]], ButtonFunction :> 
+                   FrontEndToken[
+                    FrontEnd`ButtonNotebook[], "HyperlinkGoForward"], 
+                   Evaluator -> None, Appearance -> None, FrameMargins -> 
+                   0]]], DynamicModuleValues :> {}], 
+               DynamicBox[
+                FEPrivate`FrontEndResource[
+                "HelpToolbarText", "TooltipForward"]]], 
+              TooltipBox[
+               DynamicBox[
+                ToBoxes[
+                 FEPrivate`GenerateHelpViewerActionMenu[], StandardForm]], 
+               DynamicBox[
+                FEPrivate`FrontEndResource[
+                "HelpToolbarText", "TooltipHistory"]]], 
+              TemplateBox[{13}, "Spacer1"], 
+              TooltipBox[
+               ButtonBox[
+                PaneSelectorBox[{True -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Toolbars", "DocCenter"}, 
+                    "HomeIconHot.png"]]], False -> DynamicBox[
+                    FEPrivate`ImportImage[
+                    
+                    FrontEnd`FileName[{"Toolbars", "DocCenter"}, 
+                    "HomeIcon.png"]]]}, 
+                 Dynamic[
+                  CurrentValue["MouseOver"]]], ButtonFunction :> 
+                Documentation`HelpLookup[
+                  CurrentValue[HomePage], 
+                  FrontEnd`ButtonNotebook[], 
+                  CurrentValue[Language]], Appearance -> None, Evaluator -> 
+                Automatic, Method -> "Preemptive"], 
+               DynamicBox[
+                FEPrivate`FrontEndResource[
+                "HelpToolbarText", "TooltipHome"]]]}, "RowDefault"], 
+            TemplateBox[{39}, "Spacer1"], 
+            FrameBox[
+             StyleBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource[
+               "FEExpressions", "HelpViewerSearchField"]], 
+              InputFieldBoxOptions -> {
+               ImageSize -> 
+                Dynamic[AbsoluteCurrentValue[{WindowSize, 1}] - 220], 
+                FrameMargins -> 
+                FEPrivate`Switch[
+                 FEPrivate`$OperatingSystem, "MacOSX", {{3, 3}, {0, -1}}, 
+                  "Windows", {{0, 2}, {0, 2}}, 
+                  Blank[], {{2, 2}, {0, 0}}]}], FrameStyle -> None, 
+             FrameMargins -> {{0, 0}, {4, 0}}], 
+            TemplateBox[{12}, "Spacer1"], 
+            TooltipBox[
+             ButtonBox[
+              PaneSelectorBox[{True -> DynamicBox[
+                  FEPrivate`ImportImage[
+                   
+                   FrontEnd`FileName[{"Toolbars", "DocCenter"}, 
+                    "RevertIconHot.png"]]], False -> DynamicBox[
+                  FEPrivate`ImportImage[
+                   
+                   FrontEnd`FileName[{"Toolbars", "DocCenter"}, 
+                    "RevertIcon.png"]]]}, 
+               Dynamic[
+                CurrentValue["MouseOver"]]], ButtonFunction :> FrontEndToken[
+                FrontEnd`ButtonNotebook[], "Revert", False], Evaluator -> 
+              None, Appearance -> None, Method -> "Preemptive"], 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "HelpToolbarText", "TooltipRefresh"]]]}, "RowDefault"], 
+          CacheGraphics -> False, 
+          ButtonBoxOptions -> {BaselinePosition -> (Baseline -> Baseline)}], 
+         Alignment -> {Left, Center}, Appearance -> Image[CompressedData["
+1:eJztyDkKAkEUhOFGE0OvIHgIU0PTEQ8ww7SDSQs9gnhXl3HBfbmC7Q0qeWDw
+f1CPqtcr5tm05ZyrO+lk+XIYY74ad9OYhHpWBV+OwsJXPg6Kdnr2U8qUX/8A
+AAAA+HtvyF6AgSdg4AHZHbIbYOAKGLhAdobsBBg4QnaAbA9ZAxjYAQa2gIEN
+ZGvIvp8pRMU=
+           "], "Byte", ColorSpace -> "RGB", Interleaving -> True], ImageSize -> {
+           Scaled[1], Full}]], "DockedCell", CellFrame -> 0, 
+       CellMargins -> {{0, -10}, {-2, -1}}, 
+       CellFrameMargins -> {{0, 0}, {0, 0}}, ShowCodeAssist -> False, 
+       Background -> None], 
+      Cell[
+      "", CellSize -> {1, 1}, CellOpen -> False, 
+       CellFrame -> {{0, 0}, {2, 0}}, CellFrameColor -> GrayLevel[0.5]]}], 
+   Cell[
+    StyleData["DockedCell"], CellFrame -> {{0, 0}, {1, 0}}, CellFrameColor -> 
+    GrayLevel[0.5]]}, Visible -> False, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[589, 21, 3749, 93, 58, "AnchorBarGrid",ExpressionUUID->"52a136ce-d76b-45ed-a076-294fdc3d6a47",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4363, 118, 106, 1, 52, "ObjectName",ExpressionUUID->"b05d4d6b-b237-405b-9f21-6081e2bf1d86",
+ CellID->2],
+Cell[4472, 121, 1009, 25, 110, "Usage",ExpressionUUID->"53dc22ca-6bf4-4e77-94ab-f28c1c0172ba",
+ CellID->3]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5518, 151, 1523, 36, 37, "NotesSection",ExpressionUUID->"a4ac693a-bc9a-4770-9104-47ba86ffbce3",
+ CellID->4],
+Cell[7044, 189, 784, 22, 70, "Notes",ExpressionUUID->"846118dc-4369-4d22-be92-2d799ded5d56",
+ CellID->5],
+Cell[7831, 213, 263, 5, 70, "Notes",ExpressionUUID->"7633b446-6f62-4453-aa1d-1269fc303074",
+ CellID->6]
+}, Dynamic[CurrentValue[EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}, Closed]]]],
+Cell[8199, 222, 5599, 110, 72, "NotesThumbnails",ExpressionUUID->"fd9aaf82-77bb-41a4-b091-27eb43cdbdb8",
+ CellOpen->FEPrivate`If[
+   FEPrivate`Less[FEPrivate`$VersionNumber, 11.1], False, 
+   FEPrivate`Not[
+    FEPrivate`Or[
+     FEPrivate`SameQ[
+      FrontEnd`CurrentValue[
+       FrontEnd`EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}], Open], 
+     FEPrivate`SameQ[
+      FrontEnd`CurrentValue[
+       FrontEnd`EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}], True]]]],
+ CellID->7],
+Cell[13801, 334, 92, 1, 26, "PageDelimiter",ExpressionUUID->"8791cb53-1d88-43fc-8546-1ca1aa665758",
+ CellID->8],
+Cell[13896, 337, 1473, 35, 41, "PrimaryExamplesSection",ExpressionUUID->"ed771fe4-8a8b-46ee-97dc-1a6ef253aa9d",
+ CellID->9],
+Cell[CellGroupData[{
+Cell[15394, 376, 102, 1, 72, "SeeAlsoSection",ExpressionUUID->"d1c9f25a-c368-4902-ba57-608f6db4b971",
+ CellID->10],
+Cell[15499, 379, 1912, 46, 23, "SeeAlso",ExpressionUUID->"49502eaa-83d2-44ec-9743-1c91ed8379bc",
+ CellID->11]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17448, 430, 120, 1, 72, "RelatedTutorialsSection",ExpressionUUID->"1618f649-ef66-4749-9abf-357fb9563026",
+ CellID->12],
+Cell[17571, 433, 290, 6, 70, "RelatedTutorials",ExpressionUUID->"b8d02862-a48f-4222-99d4-07a4c064a69b",
+ CellID->13],
+Cell[17864, 441, 290, 6, 70, "RelatedTutorials",ExpressionUUID->"c33c030e-e679-4be9-b89b-276d2019ca85",
+ CellID->14]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18191, 452, 112, 1, 70, "RelatedLinksSection",ExpressionUUID->"e50a825c-a671-49e0-9fff-d9730e1c03de",
+ CellID->15],
+Cell[18306, 455, 295, 6, 70, "RelatedLinks",ExpressionUUID->"a0aad25d-4f7f-4813-abd7-6fa4f11fcfc3",
+ CellID->16]
+}, Open  ]],
+Cell[18616, 464, 125, 1, 70, "History",ExpressionUUID->"96f94f17-eafc-4418-97f5-89e447cdf6d8",
+ CellID->17],
+Cell[18744, 467, 91, 1, 70, "FooterCell",ExpressionUUID->"6942a4b3-4fa6-4442-a4cf-13a39bb63572",
+ CellID->18]
+}
+]
+*)
+
+(* End of internal cache information *)
+
