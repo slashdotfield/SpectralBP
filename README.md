@@ -28,7 +28,27 @@ If installation is successful, one would be prompted by an output such as Paclet
 
 ## Use
 
+To use SpectralBP, one may simply evaluate
 
+			Needs["SpectralBP`"]
+
+To find documentation on each command, simply prefix a command with a question mark, such as
+
+			?GetModes
+
+For more details, click the '>>' hyperlink that appears. The documentation window that pops up also allows you to find the tutorial notebooks, on [quantum mechanics](https://github.com/slashdotfield/SpectralBP/blob/master/SpectralBP/Documentation/English/Tutorials/QuantumMechanicsTutorial.nb) and [quasinormal mode](https://github.com/slashdotfield/SpectralBP/blob/master/SpectralBP/Documentation/English/Tutorials/QuasinormalModesTutorial.nb) calculations.
+
+## Uninstallation or Upgrading
+
+To uninstall, simply run the command
+
+			PacletUninstall["SpectralBP"]
+
+To upgrade, Mathematica always uses the latest version of a package, so it is always safe to install a newer version over an older one.
+
+To list all installed versions, simply evaluate
+
+			PacletFind["SpectralBP"]
 
 ## License
 
