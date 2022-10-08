@@ -3,6 +3,9 @@
 [![license: MIT](https://img.shields.io/github/license/slashdotfield/SpectralBP)](LICENSE)
 [![latest release](https://img.shields.io/github/v/release/slashdotfield/SpectralBP)](https://github.com/slashdotfield/SpectralBP/releases)
 ![compatibility](https://img.shields.io/badge/Mathematica-_11.x_12.x-brightgreen.svg)
+[![DOI](https://zenodo.org/badge/186220358.svg)](https://zenodo.org/badge/latestdoi/186220358)
+
+
 
 A Mathematica package for the numerical solution of ODE eigenvalue problems via a pseudospectral method using the Bernstein basis.
 
@@ -16,15 +19,15 @@ Open a Mathematica Notebook, and evaluate
 
 			PacletInstall["dir"]
 
-where dir is the corresponding directory of the downloaded paclet. For example, "C:\\Users\\user\\Downloads\\SpectralBP-1.0.0.paclet".
+where dir is the corresponding directory of the downloaded paclet. For example, "C:\\Users\\user\\Downloads\\SpectralBP-1.0.1.paclet".
 
 Alternatively, one may save the paclet to Mathematica's default notebook directory, which may be found out by running the command \$UserDocumentsDirectory
 
 One may then evaluate
 
-			PacletInstall["SpectralBP-1.0.0.paclet"]
+			PacletInstall["SpectralBP-1.0.1.paclet"]
 
-If installation is successful, one would be prompted by an output such as Paclet\[SpectralBP-,1.0.0,<>\].
+If installation is successful, one would be prompted by an output such as Paclet\[SpectralBP-,1.0.1,<>\].
 
 ## Use
 
